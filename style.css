@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital@1&display=swap');
+
+:root {
+  /*FONT*/
+  font-family: 'Lato';
+
+  /*COLORS*/
+
+  --rtc-background: #eef1bd;
+  --rtc-color-fuego: #fe5f55;
+  --rtc-color-tierra: #c49792;
+  --rtc-color-agua: #ace894;
+  --rtc-color-aire: #86bbd8;
+
+  /* BORDER RADIUS */
+  --rtc-br: 8px;
+
+  /* SPACINGS */
+  --rtc-margin-xs: 10px;
+  --rtc-margin-s: 20px;
+  --rtc-margin-m: 30px;
+  --rtc-margin-l: 40px;
+  --rtc-margin-xl: 50px;
+  --rtc-margin-section: 100px;
+
+  --rtc-padding-xs: 10px;
+  --rtc-padding-s: 20px;
+  --rtc-padding-m: 30px;
+  --rtc-padding-l: 40px;
+  --rtc-padding-xl: 50px;
+
+  --rtc-gap-xs: 10px;
+  --rtc-gap-s: 20px;
+  --rtc-gap-m: 30px;
+  --rtc-gap-l: 40px;
+  --rtc-gap-xl: 50px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background-color: var(--rtc-background);
+  padding-bottom: var(--rtc-padding-xl);
+}
+
+header {
+  padding: var(--rtc-padding-s);
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > nav > ul {
+  display: flex;
+  gap: var(--rtc-gap-m);
+}
+
+header > nav > ul a {
+  text-decoration: none;
+  color: #000;
+}
+
+header > img {
+  height: 100px;
+  width: 100px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: var(--rtc-gap-m);
+  padding: var(--rtc-padding-m);
+  flex-wrap: wrap;
+}
+
+#signosZodiaco > div {
+  width: 30%;
+  padding: var(--rtc-padding-m);
+  border-radius: var(--rtc-br);
+}
+
+.fuego {
+  background-color: var(--rtc-color-fuego);
+}
+
+.tierra {
+  background-color: var(--rtc-color-tierra);
+}
+
+.agua {
+  background-color: var(--rtc-color-agua);
+}
+
+.aire {
+  background-color: var(--rtc-color-aire);
+}
+
+h2 {
+  font-weight: 700;
+  font-style: italic;
+}
+
+#signosZodiaco > div:hover {
+  box-shadow: 10px 5px 15px #59666c;
+}
+
+select,
+button {
+  padding: 8px 30px;
+  font-family: 'Lato';
+  font-size: 16px;
+  border-radius: var(--rtc-br);
+}
+
+/*Responsive*/
+
+@media screen and (max-width: 767px) {
+  #signosZodiaco > div {
+    width: 80%;
+  }
+}
