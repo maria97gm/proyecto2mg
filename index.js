@@ -207,12 +207,26 @@ const createCalendar = () => {
   divFiltros.appendChild(calendario)
   calendario.addEventListener('input', queSignoEres)
 }
-
 const queSignoEres = (event) => {
   const fechaSeleccionada = new Date(event.target.value)
-  console.log(fechaSeleccionada)
-}
+  const mesDiaSeleccionado =
+    fechaSeleccionada.getMonth() * 100 + fechaSeleccionada.getDate()
 
+  const signoEncontrado = signos.find((signo) => {
+    const inicioMesDia = signo.inicio.getMonth() * 100 + signo.inicio.getDate()
+    const finMesDia = signo.fin.getMonth() * 100 + signo.fin.getDate()
+    return mesDiaSeleccionado >= inicioMesDia && mesDiaSeleccionado <= finMesDia
+  })
+
+  if (signoEncontrado) {
+    printSignos([signoEncontrado])
+  } else {
+    const capricornioEncontrado = signos.find((signo) => {
+      return signo.id === 10
+    })
+    printSignos([capricornioEncontrado])
+  }
+}
 printSignos(signos)
 createSelectSignos()
 createCalendar()
